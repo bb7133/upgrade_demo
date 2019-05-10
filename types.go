@@ -57,6 +57,6 @@ type Status struct {
 }
 
 // IsTimeout determines if task is timeout
-func (s *Status) IsTimeout() bool {
+func (s *Status) IsTimeout(time string) bool {
 	return true
 }

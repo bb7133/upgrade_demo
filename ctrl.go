@@ -54,7 +54,7 @@ func (c *Ctrl) RunStatement(st *Statement) error {
 			return err
 		}
 
-		if state.IsTimeout() {
+		if state.IsTimeout(st.action.args[2]) {
 			return errors.New("timeout")
 		}
 	}
