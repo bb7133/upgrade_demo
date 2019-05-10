@@ -55,3 +55,8 @@ type Status struct {
 	StartTime 	time.Time
 	StateTime 	time.Time
 }
+
+// IsTimeout determines if task is timeout
+func (s *Status) IsTimeout() bool {
+	return true
+}

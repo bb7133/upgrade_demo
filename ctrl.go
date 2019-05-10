@@ -1,5 +1,8 @@
 package upgrade_demo
 
+import (
+	"github.com/juju/errors"
+)
 // Ctrl is the controller 
 type Ctrl struct{
 	cfg *Config
@@ -44,6 +47,15 @@ func (c *Ctrl) RunStatement(st *Statement) error {
 		err := c.upgrade.UpgradeBinary(ip, version, "tidb")
 		if err != nil {
 			return err
+		}
+
+		state, err := c.upgrade.State(ip, "tidb")
+		if err != nil {
+			return err
+		}
+
+		if state.IsTimeout() {
+			return errors.New("timeout")
 		}
 	}
 	return nil

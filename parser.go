@@ -2,6 +2,7 @@ package upgrade_demo
 
 // Parser is parser interface
 type Parser interface {
+	// should be implement
 	ParserStatement(file string) ([]*Statement, error)
 }
 
