@@ -1,0 +1,5 @@
+version v2.1.8
+upgrade tidb-cluster-tidb-1 release-3.0 timeout:3min # random kill?
+resume-case tidb_test
+
+# TODO: validate?

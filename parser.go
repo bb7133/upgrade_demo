@@ -9,7 +9,7 @@ type Parser interface {
 // Statement is statement
 type Statement struct {
 	version string
-	action Action
+	action  Action
 }
 
 // Action is action
@@ -18,7 +18,7 @@ type Action struct {
 	args []string
 }
 
-// getIPFromCfg using name in files to gets IP from cat config 
+// getIPFromCfg using name in files to gets IP from cat config
 func getIPFromCfg(name string, cfg *Config) (string, error) {
 	return "1.1.1.1", nil
 }

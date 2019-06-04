@@ -1,0 +1,7 @@
+version v2.1.8
+start-case tidb_test
+pause-case tidb_test
+upgrade tidb-cluster-tidb-1 release-3.0 timeout:3min
+resume-case tidb_test
+
+# TODO: validate?
